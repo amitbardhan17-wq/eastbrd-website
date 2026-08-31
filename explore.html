@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Explore | Eastbrd Career Bridge</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f6f8fc;
+    color: #172033;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: white;
+    border-bottom: 1px solid #e5e8ef;
+    padding: 17px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #4169e1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #566174;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #4169e1;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(135deg, #eef3ff, #ffffff);
+    padding: 65px 7%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #4169e1;
+}
+
+.hero p {
+    color: #687386;
+    max-width: 650px;
+    margin: auto;
+}
+
+.search {
+    max-width: 700px;
+    margin: 30px auto 0;
+    background: white;
+    display: flex;
+    padding: 7px;
+    border: 1px solid #dfe4ed;
+    border-radius: 10px;
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 14px;
+    font-size: 15px;
+}
+
+.search button {
+    background: #4169e1;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* MAIN */
+
+.container {
+    padding: 65px 7%;
+}
+
+.title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #687386;
+    margin-bottom: 30px;
+}
+
+/* CATEGORY CARDS */
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.category {
+    background: white;
+    border: 1px solid #e3e7ee;
+    border-radius: 12px;
+    padding: 27px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.category:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(20,40,80,0.08);
+}
+
+.category-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+.category h3 {
+    margin-bottom: 7px;
+}
+
+.category p {
+    color: #687386;
+    font-size: 14px;
+}
+
+/* INSIGHTS */
+
+.section {
+    margin-top: 70px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e3e7ee;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.tag {
+    color: #4169e1;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.card p {
+    color: #687386;
+    font-size: 14px;
+}
+
+.rating {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* QUESTIONS */
+
+.questions {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #e3e7ee;
+}
+
+.question {
+    padding: 20px 0;
+    border-bottom: 1px solid #e8ebf0;
+}
+
+.question:last-child {
+    border-bottom: none;
+}
+
+.question a {
+    text-decoration: none;
+    color: #172033;
+    font-weight: bold;
+}
+
+.question p {
+    color: #687386;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 70px;
+    background: #101624;
+    color: #aeb6c4;
+    padding: 35px 7%;
+    text-align: center;
+}
+
+footer strong {
+    color: white;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .search {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search button {
+        padding: 13px;
+    }
+
+    .container {
+        padding: 45px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        Eastbrd <span>Career Bridge</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="#community">Community</a>
+        <a href="#mentorship">Mentorship</a>
+        <a href="#">Login</a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>
+        Explore your <span>career world.</span>
+    </h1>
+
+    <p>
+        Discover real experiences, career insights,
+        college reviews and professional guidance.
+    </p>
+
+    <div class="search">
+
+        <input
+            type="text"
+            placeholder="Search companies, colleges, careers..."
+        >
+
+        <button>
+            Search
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- EXPLORE CATEGORIES -->
+
+<main class="container">
+
+    <h2 class="title">
+        What are you looking for?
+    </h2>
+
+    <p class="subtitle">
+        Explore information shared by students, graduates and professionals.
+    </p>
+
+
+    <div class="categories">
+
+        <div class="category">
+
+            <div class="category-icon">💼</div>
+
+            <h3>Companies</h3>
+
+            <p>
+                Explore workplace culture, roles,
+                career growth and employee experiences.
+            </p>
+
+        </div>
+
+
+        <div class="category">
+
+            <div class="category-icon">🎓</div>
+
+            <h3>Colleges</h3>
+
+            <p>
+                Read student and graduate experiences
+                about academics, internships and placements.
+            </p>
+
+        </div>
+
+
+        <div class="category">
+
+            <div class="category-icon">📚</div>
+
+            <h3>Careers & Specialisations</h3>
+
+            <p>
+                Understand career paths, skills,
+                subjects and specialisations.
+            </p>
+
+        </div>
+
+
+        <div class="category">
+
+            <div class="category-icon">🧑‍🏫</div>
+
+            <h3>Mentorship</h3>
+
+            <p>
+                Learn from seniors, graduates and
+                professionals who have taken the journey.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMPANY INSIGHTS -->
+
+    <section class="section">
+
+        <h2 class="title">
+            Company Insights
+        </h2>
+
+        <p class="subtitle">
+            See what professionals are saying about their experiences.
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <span class="tag">
+                    COMPANY EXPERIENCE
+                </span>
+
+                <h3>
+                    Working at a company
+                </h3>
+
+                <p>
+                    Learn about responsibilities, workplace
+                    culture, management and growth opportunities.
+                </p>
+
+                <div class="rating">
+                    ⭐ Experience insights
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag">
+                    CAREER
+                </span>
+
+                <h3>
+                    Life as a professional
+                </h3>
+
+                <p>
+                    Understand what professionals actually
+                    do in different roles and industries.
+                </p>
+
+                <div class="rating">
+                    👨‍💼 Professional perspective
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag">
+                    FRESHERS
+                </span>
+
+                <h3>
+                    Starting your first job
+                </h3>
+
+                <p>
+                    Learn from people who have already
+                    made the transition from education to work.
+                </p>
+
+                <div class="rating">
+                    🚀 Career journey
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COLLEGE REVIEWS -->
+
+    <section class="section">
+
+        <h2 class="title">
+            College Experiences
+        </h2>
+
+        <p class="subtitle">
+            Go beyond official college advertisements.
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <span class="tag">
+                    STUDENT EXPERIENCE
+                </span>
+
+                <h3>
+                    Academic Experience
+                </h3>
+
+                <p>
+                    Learn about teaching quality, faculty,
+                    curriculum and classroom experience.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag">
+                    GRADUATE EXPERIENCE
+                </span>
+
+                <h3>
+                    Placement Experience
+                </h3>
+
+                <p>
+                    Understand the real placement journey
+                    from people who experienced it.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag">
+                    CAMPUS LIFE
+                </span>
+
+                <h3>
+                    Campus Experience
+                </h3>
+
+                <p>
+                    Discover student life, environment,
+                    facilities and extracurricular activities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRENDING QUESTIONS -->
+
+    <section class="section" id="community">
+
+        <h2 class="title">
+            Trending Career Questions
+        </h2>
+
+        <p class="subtitle">
+            Questions students are asking.
+        </p>
+
+
+        <div class="questions">
+
+            <div class="question">
+
+                <a href="#">
+                    Which specialisation should I choose for a career in marketing?
+                </a>
+
+                <p>
+                    Start a discussion with students and professionals.
+                </p>
+
+            </div>
+
+
+            <div class="question">
+
+                <a href="#">
+                    What should a fresher know before joining a company?
+                </a>
+
+                <p>
+                    Learn from people who have already started their careers.
+                </p>
+
+            </div>
+
+
+            <div class="question">
+
+                <a href="#">
+                    How important is college placement when choosing an MBA?
+                </a>
+
+                <p>
+                    Compare experiences from graduates and students.
+                </p>
+
+            </div>
+
+
+            <div class="question">
+
+                <a href="#">
+                    Which skills are most useful for today's job market?
+                </a>
+
+                <p>
+                    Ask professionals and discuss career trends.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENTORSHIP -->
+
+    <section class="section" id="mentorship">
+
+        <h2 class="title">
+            Learn From Someone Ahead of You
+        </h2>
+
+        <p class="subtitle">
+            Connect with seniors and professionals who can share
+            practical career experiences.
+        </p>
+
+        <div style="text-align:center; margin-top:25px;">
+
+            <a
+                href="#"
+                style="
+                display:inline-block;
+                background:#4169e1;
+                color:white;
+                padding:13px 25px;
+                border-radius:7px;
+                text-decoration:none;
+                font-weight:bold;
+                "
+            >
+                Explore Mentorship
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        <strong>Eastbrd Career Bridge</strong>
+    </p>
+
+    <p>
+        Real People. Real Experiences. Better Career Decisions.
+    </p>
+
+    <p style="margin-top:15px;">
+        © 2026 Eastbrd Career Bridge
+    </p>
+
+</footer>
+
+</body>
+</html>
