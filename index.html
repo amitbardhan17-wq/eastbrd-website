@@ -1,318 +1,678 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eastbrd Career Bridge</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<title>Eastbrd Career Bridge</title>
 
-        body {
-            background: #f7f8fc;
-            color: #172033;
-        }
+<meta name="description" content="Eastbrd Career Bridge helps students and professionals make better career decisions through real experiences, company insights, college reviews and mentorship.">
 
-        nav {
-            background: white;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #e5e7eb;
-        }
+<style>
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            color: #172033;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        .logo span {
-            color: #4169e1;
-        }
+body {
+    background: #f6f8fc;
+    color: #172033;
+    line-height: 1.6;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #555;
-            margin-left: 25px;
-            font-size: 15px;
-        }
+/* NAVBAR */
 
-        .login {
-            border: 1px solid #4169e1;
-            padding: 9px 18px;
-            border-radius: 7px;
-            color: #4169e1;
-        }
+nav {
+    background: #ffffff;
+    border-bottom: 1px solid #e7eaf0;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        .hero {
-            text-align: center;
-            padding: 90px 20px 70px;
-            background: linear-gradient(135deg, #eef3ff, #ffffff);
-        }
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
 
-        .hero h1 {
-            font-size: 52px;
-            max-width: 850px;
-            margin: auto;
-            line-height: 1.1;
-        }
+.logo span {
+    color: #4169e1;
+}
 
-        .hero h1 span {
-            color: #4169e1;
-        }
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
 
-        .hero p {
-            max-width: 650px;
-            margin: 25px auto;
-            font-size: 18px;
-            color: #626b7d;
-            line-height: 1.6;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: #4d5668;
+    font-size: 14px;
+    font-weight: 600;
+}
 
-        .buttons {
-            margin-top: 30px;
-        }
+.nav-links a:hover {
+    color: #4169e1;
+}
 
-        .primary {
-            display: inline-block;
-            background: #4169e1;
-            color: white;
-            padding: 14px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin: 5px;
-        }
+.login-btn {
+    border: 1px solid #4169e1;
+    color: #4169e1 !important;
+    padding: 9px 18px;
+    border-radius: 7px;
+}
 
-        .secondary {
-            display: inline-block;
-            border: 1px solid #4169e1;
-            color: #4169e1;
-            padding: 14px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin: 5px;
-        }
+/* HERO */
 
-        .section {
-            padding: 65px 8%;
-        }
+.hero {
+    padding: 90px 7% 80px;
+    background: linear-gradient(135deg, #eef3ff, #ffffff);
+    text-align: center;
+}
 
-        .section h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
+.badge {
+    display: inline-block;
+    background: #e4ebff;
+    color: #4169e1;
+    padding: 7px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
 
-        .section-intro {
-            text-align: center;
-            color: #687083;
-            margin-bottom: 40px;
-        }
+.hero h1 {
+    max-width: 850px;
+    margin: auto;
+    font-size: 58px;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
+.hero h1 span {
+    color: #4169e1;
+}
 
-        .card {
-            background: white;
-            padding: 28px 22px;
-            border-radius: 12px;
-            border: 1px solid #e6e8ee;
-            transition: 0.2s;
-        }
+.hero p {
+    max-width: 680px;
+    margin: 25px auto;
+    color: #657084;
+    font-size: 18px;
+}
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
+.search-box {
+    max-width: 700px;
+    margin: 35px auto 25px;
+    background: white;
+    padding: 8px;
+    border: 1px solid #dfe4ee;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0 10px 35px rgba(30, 50, 100, 0.08);
+}
 
-        .icon {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 14px;
+    font-size: 15px;
+}
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
+.search-box button {
+    border: none;
+    background: #4169e1;
+    color: white;
+    padding: 0 24px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-        .card p {
-            color: #687083;
-            line-height: 1.5;
-            font-size: 14px;
-        }
+.hero-buttons {
+    margin-top: 20px;
+}
 
-        .why {
-            background: #172033;
-            color: white;
-            text-align: center;
-        }
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+}
 
-        .why p {
-            max-width: 700px;
-            margin: 20px auto;
-            color: #cbd1dc;
-            line-height: 1.7;
-        }
+.primary-btn {
+    background: #4169e1;
+    color: white;
+}
 
-        .community {
-            background: white;
-            text-align: center;
-        }
+.secondary-btn {
+    background: white;
+    color: #4169e1;
+    border: 1px solid #4169e1;
+}
 
-        footer {
-            background: #101624;
-            color: #b8bfcc;
-            text-align: center;
-            padding: 30px;
-            font-size: 14px;
-        }
+/* SECTIONS */
 
-        @media (max-width: 900px) {
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
+.section {
+    padding: 75px 7%;
+}
 
-            .hero h1 {
-                font-size: 40px;
-            }
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
 
-            nav a {
-                display: none;
-            }
-        }
+.section-subtitle {
+    text-align: center;
+    color: #687386;
+    margin-bottom: 45px;
+}
 
-        @media (max-width: 600px) {
-            .cards {
-                grid-template-columns: 1fr;
-            }
+/* EXPLORE CARDS */
 
-            .hero h1 {
-                font-size: 34px;
-            }
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
 
-            .section {
-                padding: 50px 6%;
-            }
-        }
-    </style>
+.card {
+    background: white;
+    padding: 30px 24px;
+    border: 1px solid #e5e8ef;
+    border-radius: 12px;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(20, 35, 70, 0.08);
+}
+
+.icon {
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.card p {
+    color: #6b7485;
+    font-size: 14px;
+}
+
+/* INSIGHTS */
+
+.insights {
+    background: white;
+}
+
+.insight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.insight {
+    border: 1px solid #e4e7ed;
+    border-radius: 12px;
+    padding: 25px;
+    background: #fafbfe;
+}
+
+.insight small {
+    color: #4169e1;
+    font-weight: bold;
+}
+
+.insight h3 {
+    margin: 10px 0;
+}
+
+.insight p {
+    color: #687386;
+    font-size: 14px;
+}
+
+/* WHY EASTBRD */
+
+.why {
+    background: #172033;
+    color: white;
+    text-align: center;
+}
+
+.why h2 {
+    font-size: 36px;
+}
+
+.why p {
+    max-width: 700px;
+    margin: 20px auto;
+    color: #cbd1dc;
+}
+
+/* COMMUNITY */
+
+.community {
+    text-align: center;
+}
+
+.community-box {
+    max-width: 850px;
+    margin: auto;
+    background: #eef3ff;
+    padding: 55px 30px;
+    border-radius: 15px;
+}
+
+.community-box h2 {
+    font-size: 34px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #101624;
+    color: #aeb6c4;
+    padding: 45px 7%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-brand {
+    max-width: 400px;
+}
+
+.footer-brand h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    color: #aeb6c4;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.copyright {
+    border-top: 1px solid #283142;
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .insight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 65px 6%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-box button {
+        padding: 13px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">Eastbrd <span>Career Bridge</span></div>
+<!-- NAVIGATION -->
 
-    <div>
+<nav>
+
+    <div class="logo">
+        Eastbrd <span>Career Bridge</span>
+    </div>
+
+    <div class="nav-links">
         <a href="#explore">Explore</a>
+        <a href="#insights">Insights</a>
         <a href="#community">Community</a>
         <a href="#about">About</a>
-        <a href="#" class="login">Login</a>
+        <a href="#" class="login-btn">Login</a>
     </div>
+
 </nav>
 
+
+<!-- HERO -->
+
 <section class="hero">
+
+    <div class="badge">
+        CAREER COMMUNITY FOR THE REAL WORLD
+    </div>
+
     <h1>
         Make better career decisions with
         <span>real experiences.</span>
     </h1>
 
     <p>
-        Eastbrd Career Bridge connects students, graduates and professionals
-        to share real experiences about colleges, companies, careers,
-        specialisations and the world of work.
+        Connect with students, graduates and professionals.
+        Discover real experiences about colleges, companies,
+        careers and specialisations.
     </p>
 
-    <div class="buttons">
-        <a href="#explore" class="primary">Explore Careers</a>
-        <a href="#community" class="secondary">Join the Community</a>
+    <div class="search-box">
+
+        <input
+            type="text"
+            placeholder="Search companies, colleges, careers..."
+        >
+
+        <button>
+            Search
+        </button>
+
     </div>
+
+    <div class="hero-buttons">
+
+        <a href="#explore" class="primary-btn">
+            Explore Career Insights
+        </a>
+
+        <a href="#community" class="secondary-btn">
+            Join the Community
+        </a>
+
+    </div>
+
 </section>
+
+
+<!-- EXPLORE -->
 
 <section class="section" id="explore">
 
-    <h2>Explore Career Insights</h2>
+    <h2 class="section-title">
+        Explore Your Career World
+    </h2>
 
-    <p class="section-intro">
-        Learn from people who have actually experienced it.
+    <p class="section-subtitle">
+        Information from people who have actually experienced it.
     </p>
 
     <div class="cards">
 
         <div class="card">
+
             <div class="icon">🎓</div>
+
             <h3>College Reviews</h3>
+
             <p>
-                Discover real experiences from students and graduates,
-                beyond promotional placement claims.
+                Discover genuine experiences from current students
+                and graduates about academics, campus life,
+                internships and placements.
             </p>
+
         </div>
 
+
         <div class="card">
+
             <div class="icon">💼</div>
+
             <h3>Company Insights</h3>
+
             <p>
-                Understand company culture, work environment, roles,
-                career growth and employee experiences.
+                Learn about company culture, work environment,
+                roles, career growth and employee experiences.
             </p>
+
         </div>
 
+
         <div class="card">
+
             <div class="icon">📚</div>
+
             <h3>Specialisations</h3>
+
             <p>
-                Learn which streams, subjects and specialisations
-                can be useful for different career paths.
+                Understand which subjects and specialisations
+                can help you build different career paths.
             </p>
+
         </div>
 
+
         <div class="card">
+
             <div class="icon">🧑‍🏫</div>
+
             <h3>Mentorship</h3>
+
             <p>
-                Connect with seniors, graduates and professionals
+                Connect with seniors and professionals
                 who can share practical career guidance.
             </p>
+
         </div>
 
     </div>
+
 </section>
+
+
+<!-- INSIGHTS -->
+
+<section class="section insights" id="insights">
+
+    <h2 class="section-title">
+        Real Career Insights
+    </h2>
+
+    <p class="section-subtitle">
+        Go beyond advertisements and official claims.
+    </p>
+
+    <div class="insight-grid">
+
+        <div class="insight">
+
+            <small>COMPANIES</small>
+
+            <h3>
+                What is it really like working there?
+            </h3>
+
+            <p>
+                Explore employee experiences about workplace
+                culture, management, responsibilities and growth.
+            </p>
+
+        </div>
+
+
+        <div class="insight">
+
+            <small>COLLEGES</small>
+
+            <h3>
+                What happens after you join?
+            </h3>
+
+            <p>
+                Learn from students and graduates about teaching,
+                internships, placements and actual campus experience.
+            </p>
+
+        </div>
+
+
+        <div class="insight">
+
+            <small>CAREERS</small>
+
+            <h3>
+                Which path is right for you?
+            </h3>
+
+            <p>
+                Talk to people who have already taken the path
+                and learn what skills and education helped them.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY -->
 
 <section class="section why" id="about">
 
-    <h2>A bridge between education and the real world.</h2>
+    <h2>
+        A bridge between education and the real world.
+    </h2>
 
     <p>
-        Choosing a college, specialisation or company can be difficult
-        when you only see advertisements and official claims.
-        Eastbrd Career Bridge is designed to bring real people and
+        Choosing a college, specialisation or company can be
+        difficult when you only see advertisements and official
+        claims. Eastbrd Career Bridge brings real people and
         real experiences into the decision-making process.
     </p>
 
 </section>
 
+
+<!-- COMMUNITY -->
+
 <section class="section community" id="community">
 
-    <h2>Be part of the career community</h2>
+    <div class="community-box">
 
-    <p class="section-intro">
-        Ask questions. Share experiences. Help someone make a better decision.
-    </p>
+        <h2>
+            Your experience could help someone else's career.
+        </h2>
 
-    <a href="#" class="primary">Join Eastbrd Career Bridge</a>
+        <p class="section-subtitle">
+            Ask questions. Share experiences. Connect with seniors.
+            Help someone make a better decision.
+        </p>
+
+        <a href="#" class="primary-btn">
+            Join Eastbrd Career Bridge
+        </a>
+
+    </div>
 
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
-    © 2026 Eastbrd Career Bridge · Real People. Real Experiences. Better Decisions.
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <h3>
+                Eastbrd Career Bridge
+            </h3>
+
+            <p>
+                Real People. Real Experiences.
+                Better Career Decisions.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#explore">Explore</a>
+            <a href="#insights">Career Insights</a>
+            <a href="#community">Community</a>
+            <a href="#about">About</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Eastbrd Career Bridge. All rights reserved.
+
+    </div>
+
 </footer>
 
 </body>
